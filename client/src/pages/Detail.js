@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useSelector, useDispatch } from 'react-redux';
-import { UPDATE_PRODUCTS } from '../../utils/actions';
-import { QUERY_PRODUCTS } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
-import ProductItem from '../ProductItem';
+import { UPDATE_PRODUCTS } from '../utils/actions';
+import { QUERY_PRODUCTS } from '../utils/queries';
+import { idbPromise } from '../utils/helpers';
+import ProductItem from '../components/ProductItem';
 
 function ProductList() {
   const state = useSelector((state) => {
@@ -72,7 +71,6 @@ function ProductList() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
-      {loading ? <img src={spinner} alt="loading" /> : null}
     </div>
   );
 }
